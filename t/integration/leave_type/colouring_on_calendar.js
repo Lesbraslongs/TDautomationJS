@@ -43,7 +43,7 @@ const
 
 describe('Coloring of half days', function(){
 
-  let driver, user_email, user_id,
+  var driver, user_email, user_id,
     leave_type_holiday_id, leave_type_sick_id;
 
   this.timeout( config.get_execution_timeout() );

@@ -47,7 +47,7 @@ describe('Check that values for new columns are shown only for employess current
 
   this.timeout( config.get_execution_timeout() );
 
-  let driver,
+  var driver,
     email_A, user_id_A,
     email_B, user_id_B,
     email_C, user_id_C;

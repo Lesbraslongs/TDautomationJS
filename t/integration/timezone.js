@@ -35,7 +35,7 @@ const
  * */
 
 describe('Check Time zones', function(){
-  let
+  var
     driver,
     user_email,
     today_usa,

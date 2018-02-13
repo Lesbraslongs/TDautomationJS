@@ -79,7 +79,7 @@ describe('Collect remaining days for employees', function(){
         .findElements(By.css('tr[data-vpp-user-row]'))
 
         .then(els => Promise.map(els, el => {
-          let user_id;
+          var user_id;
 
           return el.getAttribute('data-vpp-user-row')
             .then(u_id => Promise.resolve( user_id = u_id ))

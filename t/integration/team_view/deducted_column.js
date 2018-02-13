@@ -41,7 +41,7 @@ describe('Case when holidays spans through more then one month and is devided by
 
   this.timeout( config.get_execution_timeout() );
 
-  let driver,
+  var driver,
     email_A, user_id_A,
     email_B, user_id_B;
 
@@ -263,7 +263,7 @@ describe('Case when holidays spans through more then one month and is devided by
   });
 
   it("Approve newly added leave request", function(done){
-    let click_selector = `tr[vpp="pending_for__${email_B}"] .btn-success`;
+    var click_selector = `tr[vpp="pending_for__${email_B}"] .btn-success`;
     driver
       .findElement(By.css( click_selector ))
       .then(el => el.click())

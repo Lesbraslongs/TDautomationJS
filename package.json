@@ -28,6 +28,7 @@
     "node-uuid": "^1.4.7",
     "nodemailer": "^1.11.0",
     "nodemailer-smtp-transport": "^1.1.0",
+    "nodemon": "^1.14.12",
     "optimist": "^0.6.1",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
@@ -39,7 +40,19 @@
     "validator": "^3.43.0"
   },
   "devDependencies": {
+    "chai": "^2.2.0",
+    "eslint": "^4.17.0",
+    "eslint-config-google": "^0.9.1",
+    "mocha": "^5.0.0",
+    "selenium-webdriver": "^4.0.0-alpha.1"
   },
   "scripts": {
+    "start": "echo start && npm run lint",
+    "prelint": "echo prelint - run eslint",
+    "lint": "eslint '*.js' & npm run test",
+    "postlint": "echo je me lance jamais",
+    "pretest": "echo pretest",
+    "test": "./node_modules/mocha/bin/mocha --recursive t/unit/*",
+    "posttest": "nodemon bin/wwww"
   }
 }

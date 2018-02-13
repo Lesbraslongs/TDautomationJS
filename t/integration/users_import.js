@@ -33,7 +33,7 @@ describe('Bulk import of users', function(){
 
   this.timeout( config.get_execution_timeout() );
 
-  let email_admin,
+  var email_admin,
       driver,
       csv_data,
       test_users_filename =  __dirname +'/../test.csv';
@@ -59,8 +59,8 @@ describe('Bulk import of users', function(){
   it('Create test .CSV file for the test', function(done){
     csv_data = [['email', 'name', 'lastname', 'department']];
 
-    let token = (new Date()).getTime();
-    for (let i=0; i<10; i++){
+    var token = (new Date()).getTime();
+    for (var i=0; i<10; i++){
       csv_data.push([
         'test_csv_'+i+'_'+token+'@test.com',
         'name_csv_'+i+'_'+token+'@test.com',
@@ -78,7 +78,7 @@ describe('Bulk import of users', function(){
   });
 
   it('Upload user import file', function(done){
-    let regex = new RegExp(
+    var regex = new RegExp(
       'Successfully imported users with following emails: '
       + csv_data.slice(1).map(it => it[0]).sort().join(', ')
     );
@@ -97,7 +97,7 @@ describe('Bulk import of users', function(){
   });
 
   it('Ensure that imported users are in the system', function(done){
-    let users_ids;
+    var users_ids;
     // Get IDs of newly added users
     Promise.map(csv_data.slice(1).map(it => it[0]), email => {
       return user_info_func({

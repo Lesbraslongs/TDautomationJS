@@ -19,7 +19,7 @@ module.exports = {
           return Promise.resolve();
         }
 
-        let sql = 'INSERT INTO user_allowance_adjustment (year, adjustment, user_id, created_at) '
+        var sql = 'INSERT INTO user_allowance_adjustment (year, adjustment, user_id, created_at) '
           + 'SELECT 2017 AS year, adjustment as adjustment, id as user_id, date() || \' \' || time() as created_at '
           + 'FROM users';
 
